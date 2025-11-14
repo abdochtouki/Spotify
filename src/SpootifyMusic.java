@@ -9,9 +9,9 @@ public class SpootifyMusic extends SpootifyContent {
     public SpootifyMusic(String title, int duration, List<String> songwriters, List<String> interpreters, String genre){
         super(title, duration);
 
-        if(title.isBlank() || songwriters.isEmpty() || interpreters.isEmpty() || genre.isBlank()) 
-            throw new InputMismatchException("Entrada inválida");
-            
+        if(title.isBlank() || songwriters.isEmpty() || interpreters.isEmpty() || genre.isBlank())
+            throw new InputMismatchException("Invalid input");
+
         this.songwriters = songwriters;
         this.interpreters = interpreters;
         this.genre = genre;
@@ -20,28 +20,28 @@ public class SpootifyMusic extends SpootifyContent {
     public List<String> getSongwriters() {
         return this.songwriters;
     }
-    
+
     public void setSongwriters(List<String> songwriters) {
         this.songwriters = songwriters;
     }
-    
+
     public List<String> getInterpreters() {
         return this.interpreters;
     }
-    
+
     public void setInterpreters(List<String> interpreters) {
         this.interpreters = interpreters;
     }
-    
+
     public String getGenre() {
         return this.genre;
     }
-    
+
     public void setGenre(String genre) {
         this.genre = genre;
     }
 
-    
+
     public String toString(){
         String songwritersString = "";
         String interpretersString = "";
@@ -57,6 +57,6 @@ public class SpootifyMusic extends SpootifyContent {
         interpretersString = interpretersString.replaceFirst(".$","");
         songwritersString = songwritersString.replaceFirst(".$","");
 
-        return String.format("Música | Título: %s | Duração: %d segundos | Interpretes: %s | Compositores: %s|", title, duration, interpretersString, songwritersString);
+        return String.format("Music | Title: %s | Duration: %d seconds | Interpreters: %s | Songwriters: %s|", title, duration, interpretersString, songwritersString);
     }
 }

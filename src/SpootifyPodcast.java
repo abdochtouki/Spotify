@@ -1,34 +1,34 @@
 import java.util.InputMismatchException;
 
 public class SpootifyPodcast extends SpootifyContent {
-    private String presenter;
-    private String review;
-    
-    public SpootifyPodcast(String title, int duration, String presenter, String review){
+    private String host;
+    private String description;
+
+    public SpootifyPodcast(String title, int duration, String host, String description) {
         super(title, duration);
 
-        if(presenter.isBlank() || review.isBlank()) throw new InputMismatchException("Entrada inválida");
-        this.presenter = presenter;
-        this.review = review;
+        if(host.isBlank() || description.isBlank()) throw new InputMismatchException("Invalid input");
+        this.host = host;
+        this.description = description;
     }
 
-    public String getPresenter() {
-        return this.presenter;
+    public String getHost() {
+        return this.host;
     }
 
-    public void setPresenter(String presenter) {
-        this.presenter = presenter;
+    public void setHost(String host) {
+        this.host = host;
     }
 
-    public String getReview() {
-        return this.review;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setReview(String review) {
-        this.review = review;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String toString(){
-        return String.format("Podcast | Título: %s | Duração: %d segundos | Apresentador: %s |", title, duration, presenter);
+    public String toString() {
+        return String.format("Podcast | Title: %s | Duration: %d seconds | Host: %s |", title, duration, host);
     }
 }

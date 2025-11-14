@@ -5,9 +5,9 @@ public class SpootifyMenu {
     private Map<String, SpootifyPlaylist> playlists;
 
     public Map<String, SpootifyPlaylist> getPlaylists(){
-		return playlists;
-	}
-    
+        return playlists;
+    }
+
     public SpootifyMenu(){
         playlists = new HashMap<String, SpootifyPlaylist>();
         addPlaylist("library");
@@ -40,12 +40,12 @@ public class SpootifyMenu {
 
     public String getContentDescription(SpootifyContent content){
         String contentClass = "";
-        
-        if(content.getClass() == SpootifyMusic.class) contentClass = "Música";
+
+        if(content.getClass() == SpootifyMusic.class) contentClass = "Music";
         if(content.getClass() == SpootifyPodcast.class) contentClass = "Podcast";
         if(content.getClass() == SpootifyAudiobook.class) contentClass = "Audiobook";
 
         return String.format("%s - %s", contentClass, content.toString());
-        
+
     }
 }

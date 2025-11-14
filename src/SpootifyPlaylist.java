@@ -4,8 +4,8 @@ import java.util.LinkedList;
 
 public class SpootifyPlaylist extends SpootifyContent {
     private List<SpootifyContent> contentList;
-    
-    public SpootifyPlaylist(String title){
+
+    public SpootifyPlaylist(String title) {
         super(title, 0);
         contentList = new LinkedList<SpootifyContent>();
     }
@@ -18,7 +18,7 @@ public class SpootifyPlaylist extends SpootifyContent {
         this.contentList = contentList;
     }
 
-    public String getDurationFormated(){
+    public String getFormattedDuration() {
         int hours;
         int minutes;
         int seconds = this.getDuration();
@@ -31,23 +31,22 @@ public class SpootifyPlaylist extends SpootifyContent {
         return String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 
-    public void addContent(SpootifyContent content){
+    public void addContent(SpootifyContent content) {
         contentList.add(content);
         this.setDuration(this.getDuration() + content.getDuration());
     }
 
-    public void removeContent(SpootifyContent content){
-        if(contentList.contains(content))
+    public void removeContent(SpootifyContent content) {
+        if(contentList.contains(content)) {
             contentList.remove(content);
             this.setDuration(this.getDuration() - content.getDuration());
+        }
     }
 
-    public List<SpootifyContent> filterBy(boolean music, boolean podcast, boolean audiobook){
-
+    public List<SpootifyContent> filterBy(boolean music, boolean podcast, boolean audiobook) {
         List<SpootifyContent> filteredList = new ArrayList<SpootifyContent>();
-        
-        for (SpootifyContent content : this.contentList){
 
+        for (SpootifyContent content : this.contentList) {
             if(content.getClass() == SpootifyMusic.class && music)
                 filteredList.add(content);
 
@@ -61,9 +60,9 @@ public class SpootifyPlaylist extends SpootifyContent {
         return filteredList;
     }
 
-    public String getDescription(){
-        String titulo = this.getTitle();
-        if(titulo == "library") titulo = "Biblioteca";
-        return String.format("Título da Playlist: %s\nDuração: %s\nConteúdos: %d ", titulo, getDurationFormated(), contentList.size());
+    public String getDescription() {
+        String title = this.getTitle();
+        if(title.equals("library")) title = "Library";
+        return String.format("Playlist Title: %s\nDuration: %s\nContents: %d", title, getFormattedDuration(), contentList.size());
     }
 }

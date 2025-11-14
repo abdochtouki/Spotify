@@ -5,7 +5,7 @@ public abstract class SpootifyContent{
     protected int duration;
 
     public SpootifyContent(String title, int duration){
-        if(title.isBlank()) throw new InputMismatchException("Entrada inválida");
+        if(title.isBlank()) throw new InputMismatchException("Invalid input");
         this.title = title;
         this.duration = duration;
     }

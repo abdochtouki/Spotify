@@ -1,17 +1,8 @@
-# **sPOOtify**
+# **Spotify-Like Playlist Application**
 
 **Screenshot**
 _________________
-![screenshot](assets/screenshot_initial.png)
+![screenshot](assets/spotify.png)
 
-***EN***
-_________________
-A project developed in the discipline of Object Oriented Programming, to apply and improve the concepts of Object Orientation.
 
-For the project, we reproduced some of Spotify's concepts, such as creating and managing playlists, adding/removing content, listing the contents present in the playlist.
-
-***PT***
-_________________
-Um projeto desenvolvido na disciplina de Programação Orientada a Objetos, para aplicar e aperfeiçoar os conceitos de Orientação a Objetos.
-
-Para o projeto reproduzimos alguns dos conceitos do Spotify, como criação e gestão de playlists, adição/remoção de conteúdo, listagem dos conteúdos presentes na playlist.
+A project developed for the Object-Oriented Programming course to apply and enhance OOP concepts. The application reproduces some of Spotify’s core features, including creating and managing playlists, adding or removing content, and listing the tracks within a playlist.
